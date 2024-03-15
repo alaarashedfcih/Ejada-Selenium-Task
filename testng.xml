@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="8" parallel="tests" name="All E2E Tests" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.company.listeners.SuiteListener"/>
+        <listener class-name="com.company.listeners.TestListener"/>
+    </listeners>
+
+    <test parallel="classes" thread-count="8" name="Ejada E2E UI Tests on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <packages>
+            <package name="com.ejada.tests.login"/>
+            <package name="com.ejada.tests.shopping"/>
+        </packages>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->
